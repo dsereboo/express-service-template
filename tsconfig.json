@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./src/types/global.d.ts", "./node_modules/@types"],
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules"],
+  "files": ["./src/types/global.d.ts"]
+}

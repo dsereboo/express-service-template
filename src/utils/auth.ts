@@ -1,6 +1,8 @@
 import * as argon2 from "argon2";
 import { Request } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken"
+import AppError from "src/types/error";
+import { STATUS_CODES } from "./constants";
 
 export const hashPassword=async(password:string)=>{
     return await argon2.hash(password);
@@ -26,13 +28,12 @@ export const validateJWT= (token:string, secret:string)=>{
     return jwt.verify(token,secret)
 }
 
-export const getBearerToken=(req:Request)=>{
-const authHeaders =req.get("Authorization")
-//remove bearer part
-//return tokekn
-return ""
-}
+export const getBearerToken = (req: Request): string => {
+  const authHeader = req.get("Authorization");
 
-export const makeRefreshToken = ()=>{
-    
-}
+  if (!authHeader || !authHeader.startsWith("Bearer ")){
+    throw new AppError(STATUS_CODES.BADREQUEST, "Bearer Token not found")
+  }
+
+  return authHeader.split(" ")[1];
+};

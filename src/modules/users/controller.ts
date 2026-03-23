@@ -8,7 +8,7 @@ export class UsersController{
         this.userService = userService;
     }
 
-    async handleGetUsers(req:Request, res:Response){
+    public async handleGetUsers(req:Request, res:Response){
         const users = await this.userService.handleGetActiveUsers()
         return users;
     }

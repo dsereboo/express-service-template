@@ -11,7 +11,7 @@ export class UserService implements IUserService {
         this.userRepo = userRepo;
     }
 
-    async handleGetActiveUsers(){
+    public async handleGetActiveUsers(){
         return this.userRepo.getAllUsers()
     }
 }

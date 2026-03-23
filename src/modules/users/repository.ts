@@ -8,7 +8,7 @@ export interface IUserRepo {
 export class UserRepository implements IUserRepo {
     constructor() {}
 
-    async getAllUsers() {
+    public async getAllUsers() {
         await using db = await createConnection()
         const res = await db.connection.query<User>(`SELECT NOW()`)
         return res.rows

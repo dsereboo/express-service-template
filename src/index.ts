@@ -18,11 +18,10 @@ app.use(express.json())
 app.use(morganMiddleware)
 app.use(limiter)
 app.use("/health", healthCheckHandler)
-app.use("/api/v1", v1Router)
 app.use(authMiddleware)
+app.use("/api/v1", v1Router)
 app.use(notFoundMiddleware)
 
-//add health check endp
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on port http://localhost:${PORT}`)

@@ -3,6 +3,7 @@ import AppError from "src/types/error";
 import { STATUS_CODES } from "src/utils/constants";
 import z from "zod"
 
+//update to cater for query params as well
 export const requestValidator = (schema:z.ZodType)=>(req:Request,res:Response,next:NextFunction)=>{
   const result = schema.safeParse(req.body)
 

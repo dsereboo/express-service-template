@@ -10,7 +10,7 @@ export class UserRepository implements IUserRepo {
 
     async getAllUsers() {
         await using db = await createConnection()
-        var res = await db.connection.query<User>(`SELECT NOW()`)
+        const res = await db.connection.query<User>(`SELECT NOW()`)
         return res.rows
     }
 }

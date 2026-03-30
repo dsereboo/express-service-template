@@ -3,7 +3,8 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 import { defineConfig } from 'eslint/config'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
-import eslintPluginSecurity from "eslint-plugin-security"
+import eslintPluginSecurity from 'eslint-plugin-security'
+
 export default defineConfig([
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],

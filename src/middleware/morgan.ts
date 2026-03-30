@@ -1,5 +1,5 @@
 import morgan from "morgan";
-import logger from "./winston";
+import { logger } from "src/utils/logger";
 
 export const morganMiddleware = morgan(
   function (tokens, req, res) {

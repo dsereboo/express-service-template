@@ -5,7 +5,7 @@ export default defineConfig({
 
   // you are running on Node, not browser
   platform: "node",
-  target: "node18",
+  target: "node22",
 
   format: ["esm"],
 

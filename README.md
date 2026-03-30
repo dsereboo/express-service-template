@@ -1,4 +1,4 @@
-# Express Service Timeolatr
+# Express Service Template
 v5 Express.js API template. Designed as a starting point for building a REST service.
 C# Developer friendly.
 

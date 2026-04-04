@@ -20,6 +20,7 @@ ENV NODE_ENV=$NODE_ENV
 WORKDIR /app
 
 COPY package.json  yarn.lock ./
+
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 
